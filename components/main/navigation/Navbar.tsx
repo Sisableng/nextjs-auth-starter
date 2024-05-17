@@ -16,7 +16,7 @@ export default function Navbar() {
       <nav className="bg-background">
         <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-8">
-            <h3>NSS</h3>
+            <h3>NSK</h3>
             <Link href={"/"}>Home</Link>
             <Link href={"/feature"}>Feature</Link>
           </div>
