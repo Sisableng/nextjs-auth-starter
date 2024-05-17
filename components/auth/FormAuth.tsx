@@ -32,7 +32,7 @@ export default function FormAuth() {
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-center">
-            You're already logged in.
+            {`You're already logged in.`}
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center">

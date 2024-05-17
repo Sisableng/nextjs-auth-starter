@@ -132,7 +132,7 @@ export default function LoginForm() {
         </Form>
       </div>
       <div className="mt-4 text-center text-sm">
-        <p className="text-muted-foreground">Don't have an account yet?</p>
+        <p className="text-muted-foreground">{`Don't have an account yet?`}</p>
         <Link
           href={{
             pathname: "/",
