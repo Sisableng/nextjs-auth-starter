@@ -1,5 +1,5 @@
 {
-  "id": "e4129b63-f193-4454-a05c-b2f99375c41b",
+  "id": "37970637-abee-40d5-b453-b16ac49f265a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "6",
   "dialect": "postgresql",
@@ -41,6 +41,12 @@
         },
         "avatar": {
           "name": "avatar",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "avatar_id": {
+          "name": "avatar_id",
           "type": "text",
           "primaryKey": false,
           "notNull": false

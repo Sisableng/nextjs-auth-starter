@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"password" text NOT NULL,
 	"name" text,
 	"avatar" text,
+	"avatar_id" text,
 	"created_at" timestamp DEFAULT now(),
 	CONSTRAINT "users_id_unique" UNIQUE("id"),
 	CONSTRAINT "users_email_unique" UNIQUE("email"),

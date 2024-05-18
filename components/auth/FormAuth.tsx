@@ -35,7 +35,11 @@ export default function FormAuth() {
             {`You're already logged in.`}
           </CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
+        <CardContent className="space-y-4 text-center">
+          <div>
+            <p className="text-xs text-muted-foreground">{`You're Loged in as`}</p>
+            <p>{session.user.username}</p>
+          </div>
           <Button asChild>
             <Link href={"/dashboard"}>Go to Dashboard</Link>
           </Button>

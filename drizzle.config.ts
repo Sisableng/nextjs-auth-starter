@@ -5,7 +5,7 @@ export default defineConfig({
   dialect: "postgresql",
   out: "./drizzle/migrations",
   dbCredentials: {
-    url: process.env.POSTGRES_URL!,
+    url: process.env.DATABASE_URL!,
   },
   verbose: true,
   strict: true,

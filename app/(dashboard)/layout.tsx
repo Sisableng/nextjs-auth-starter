@@ -7,6 +7,7 @@ import NprogressProvider from "@/components/providers/nprogress-provider";
 import AuthProvider from "@/components/providers/auth-provider";
 import { auth } from "@/auth";
 import SonnerProvider from "@/components/providers/sonner-provider";
+import TopBreadcrumbs from "@/components/dashboard/TopBreadcrumbs";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -34,7 +35,8 @@ export default async function RootLayout({
             <NprogressProvider>
               <SonnerProvider>
                 <Navbar />
-                <main className="container mt-20">{children}</main>
+                <TopBreadcrumbs className="container mt-32" />
+                <main className="container py-12">{children}</main>
               </SonnerProvider>
             </NprogressProvider>
           </ThemeProvider>

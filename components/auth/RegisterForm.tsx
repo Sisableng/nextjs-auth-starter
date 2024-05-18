@@ -37,7 +37,7 @@ const passwordSchema = z
 
 const formSchema = z
   .object({
-    username: z.string().min(2).max(50),
+    username: z.string().min(3).max(30),
     email: z.string().email(),
     password: passwordSchema,
     confirm: passwordSchema,
@@ -114,7 +114,7 @@ export default function RegisterForm() {
     if (searchParams.get("step")) {
       setStep(Number(searchParams.get("step")));
     }
-  }, [searchParams]);
+  }, [searchParams, setStep]);
   return (
     <div className="relative">
       <div>
