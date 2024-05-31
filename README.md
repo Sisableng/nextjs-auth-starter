@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Starter Kit
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+This starter kit is a Next.js project integrated with Auth.js v5 for authentication. It provides a basic setup for user authentication, profile updates, password management, and more.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Features](#features)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
+- [Author](#author)
+
+## Installation
+
+To install and set up this project, follow these steps:
+
+1. **Install Bun:**
+   Make sure you have Bun installed on your machine. You can install it from the official website: [Bun.sh](https://bun.sh/).
+
+2. **Use Template:**
+   Click on the button _Use this template_ then click _Create new repository_, then clone the repo to your machine.
+
+3. **Install Dependencies:**
+   ```bash
+   $ bun install
+   ```
+
+## Usage
+
+To run the project, use the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To configure the project:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Set up your PostgreSQL database.
+2. Rename `.env.example` to `.env` and place your database URL in the `.env` file.
 
-## Learn More
+```env
+DATABASE_URL=your_postgresql_database_url
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. Open terminal and run this command
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bunx auth secret
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+and then place the value to .env by following
 
-## Deploy on Vercel
+```env
+NEXT_PUBLIC_AUTH_SECRET=value_from_terminal
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- User authentication with Auth.js v5
+- Update user profile
+- Password management
+
+## Dependencies
+
+This project uses the following dependencies:
+
+- [Shadcn](https://github.com/shadcn)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Auth.js](https://authjs.dev/)
+- [Drizzle ORM](https://github.com/drizzle-team/drizzle-orm)
+
+## Documentation
+
+For further details on usage and configuration, refer to the following documentation links:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Auth.js Documentation](https://authjs.dev/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Drizzle ORM Documentation](https://github.com/drizzle-team/drizzle-orm#readme)
+
+## Author
+
+- [@Sisableng](https://github.com/Sisableng)

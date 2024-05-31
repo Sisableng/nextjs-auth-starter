@@ -12,9 +12,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DropdownMenuArrow } from "@radix-ui/react-dropdown-menu";
-import { signOut } from "next-auth/react";
 import { Session } from "next-auth";
 import Link from "next/link";
+import { getOut } from "@/app/actions/auth";
+import { toast } from "sonner";
 
 interface ProfileMenuProps {
   session: Session;
@@ -22,6 +23,12 @@ interface ProfileMenuProps {
 
 export default function ProfileMenu({ session }: ProfileMenuProps) {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
+
+  const logout = async () => {
+    const toastId = toast.loading("Wait a moment...");
+    await getOut();
+    toast.dismiss(toastId);
+  };
   return (
     <DropdownMenu modal={false} onOpenChange={setIsDropdownOpen}>
       <DropdownMenuTrigger>
@@ -57,7 +64,7 @@ export default function ProfileMenu({ session }: ProfileMenuProps) {
           </DropdownMenuItem>
           <DropdownMenuItem
             className="flex cursor-pointer items-center gap-3 text-sm text-destructive"
-            onClick={() => signOut()}
+            onClick={logout}
           >
             <span>
               <LogOut size={16} />

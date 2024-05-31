@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { db } from "@/drizzle";
 import { users } from "@/drizzle/schema/schema";
 import { AuthError } from "next-auth";
@@ -52,22 +52,20 @@ export const register = async (values: {
 
 export const login = async (values: { username: string; password: string }) => {
   try {
-    await signIn("credentials", {
-      ...values,
-      redirect: false,
-      redirectTo: "/dashboard",
-    });
+    await signIn("credentials", values);
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
-          return { error: `Invalid credentials!` };
-
+          return "Username atau Password salah.";
         default:
-          return { error: `Internal server error!` };
+          return "Something went wrong.";
       }
     }
-
     throw error;
   }
+};
+
+export const getOut = async () => {
+  await signOut();
 };
