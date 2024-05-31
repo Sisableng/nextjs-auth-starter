@@ -1,4 +1,6 @@
 # Next.js Starter Kit
+![image1](https://github.com/Sisableng/nextjs-auth-starter/assets/58748827/a1cc1ea2-f793-44a7-b31a-ef279d8b4c09)
+
 
 ## Introduction
 
